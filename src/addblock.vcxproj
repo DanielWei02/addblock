@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ndisapi.def" />
+	<None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="filter.h" />
