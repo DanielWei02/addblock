@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 #ifndef PCH_H
 #define PCH_H
 
@@ -27,9 +29,5 @@
 #include <map>
 #include <cctype>
 #include <shared_mutex>
-
-#include "..\lib\ndisapi\include\ndisapi.h"
-#include "..\lib\ndisapi\include\Common.h"
-#include "..\lib\ndisapi\ndisapi\iphlp.h"
 
 #endif //PCH_H

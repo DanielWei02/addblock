@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="addblock.cpp" />
+	<ClCompile Include="..\lib\ndisapi\ndisapi\ndisapi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ndisapi.def" />
@@ -160,6 +161,11 @@
   <ItemGroup>
     <ClInclude Include="filter.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="..\lib\ndisapi\ndisapi\iphlp.h" />
+    <ClInclude Include="..\lib\ndisapi\ndisapi\resource.h" />
+    <ClInclude Include="..\lib\ndisapi\ndisapi\precomp.h" />
+    <ClInclude Include="..\lib\ndisapi\include\Common.h" />
+    <ClInclude Include="..\lib\ndisapi\include\ndisapi.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="addblock.rc" />
@@ -168,3 +174,6 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
+#include "..\lib\ndisapi\include\ndisapi.h"
+#include "..\lib\ndisapi\include\Common.h"
+#include "..\lib\ndisapi\ndisapi\iphlp.h"
