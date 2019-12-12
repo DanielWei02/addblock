@@ -2,11 +2,18 @@
 //
 
 #include <iostream>
+#include "stdafx.h"
 #include "filter.h"
+#include "addblock.h"
+
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	filter::p_filter fill;
+	TCP_AdapterList a;
+	fill.GetTcpipBoundAdaptersInfo(&a);
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -1,33 +1,22 @@
 #pragma once
 
 
+namespace filter {
 
-#ifndef PCH_H
-#define PCH_H
+	class p_filter final : public CNdisApi {
 
-#include <winsock2.h>
-#include <in6addr.h>
-#include <tchar.h>
-#include <ws2ipdef.h>
-#include <IPHlpApi.h>
-#include <Mstcpip.h>
-#include <conio.h>
-#include <WinDNS.h>
+	private:
+		int filter_in, filter_out;
 
-#include <memory>
-#include <iostream>
-#include <iomanip>
-#include <chrono>
-#include <thread>
-#include <limits>
-#include <atomic>
-#include <string>
-#include <functional>
-#include <vector>
-#include <cassert>
-#include <array>
-#include <map>
-#include <cctype>
-#include <shared_mutex>
+	public:
+		//template<typename F1, typename F2>
+		//p_filter(F1 in, F2 out) :
+		p_filter(int in=0, int out=0) {
+			std::cout << "rar";
+			filter_in = in;
+			filter_out = out;
+		}
 
-#endif //PCH_H
+	};
+
+}
