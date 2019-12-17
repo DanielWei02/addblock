@@ -72,6 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>C:\Users\Daniel Wei\Documents\coding\addblock;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -156,11 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ndisapi.def" />
-	<None Include="..\README.md" />
+    <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="filter.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="windivert.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="addblock.rc" />
