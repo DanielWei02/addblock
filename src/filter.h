@@ -1,51 +1,34 @@
+// filter.h
+//
 #pragma once
-
-#include <iostream>
 #include "windivert.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <initializer_list>
 
 //how urls will be stored
-typedef struct {
-	UINT length;
-	char* domain;
-}URL, *PURL;
+/*
+typedef struct  {
+    char* domain;
+} URL_STRUCT;//URL, * PURL;
+*/
+//typedef std::vector<URL_STRUCT> URL, * PURL;
+
+typedef std::vector<char*> URL, * PURL;
 
 //how the blacklist will be stored
+
 typedef struct {
-	UINT size;
-	UINT length;
-	PURL *url;
-}BLACKLIST, *PBLACKLIST;
+    // UINT size; //mem size
+    UINT length = 0; //number of entries
+    URL urls;
+} BLACKLIST, * PBLACKLIST;
 
-PBLACKLIST BlacklistInit() {
-	UINT size = 1024;
-
-	PBLACKLIST blacklist = (PBLACKLIST)malloc(sizeof(BLACKLIST));
-	if (blacklist == NULL) {
-		goto memory_error;
-	}
-
-	blacklist->url = (PURL*)malloc(sizeof(URL));
-	if (blacklist->url == NULL) {
-		goto memory_error;
-	}
-
-	blacklist->size = size; //memory size
-	blacklist->length = 0; //number of urls
-
-	return blacklist;
-memory_error:
-	std::cerr << "Failed to allocate memory";
-	exit(EXIT_FAILURE);
-}
-
-void BlacklistAdd(PBLACKLIST blacklist, char* list) {
+//typedef std::vector<BLACKLIST_STRUCT> BLACKLIST, *PBLACKLIST;
 
 
-
-memory_error:
-	std::cerr << "Failed to allocate memory";
-	exit(EXIT_FAILURE);
-}
-
-
-
+//Blacklist prototypes
+//PBLACKLIST BlacklistInit(void);
+//void BlackListAdd(const PBLACKLIST blacklist, const PURL entry);
