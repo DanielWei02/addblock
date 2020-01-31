@@ -7,7 +7,7 @@ A packet level filter for advertisement and known malicious sites
 
 ###### Create prototype
 - [ ] "Block" sites
-- [ ]
+- [ ] Traffic monitoring
 
 
 ###### Optimization

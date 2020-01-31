@@ -1,34 +1,28 @@
 // filter.h
 //
 #pragma once
-#include "windivert.h"
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <initializer_list>
+#include <ws2tcpip.h>
 
-//how urls will be stored
-/*
-typedef struct  {
-    char* domain;
-} URL_STRUCT;//URL, * PURL;
-*/
-//typedef std::vector<URL_STRUCT> URL, * PURL;
+#include "windivert.h"
 
-typedef std::vector<char*> URL, * PURL;
+#define MAXBUF WINDIVERT_MTU_MAX
+#define MAX_IP_LENGTH 11
 
-//how the blacklist will be stored
+typedef std::vector<std::string> BLACKLIST, * PBLACKLIST;
 
-typedef struct {
-    // UINT size; //mem size
-    UINT length = 0; //number of entries
-    URL urls;
-} BLACKLIST, * PBLACKLIST;
+typedef std::vector<std::string> BLACKLIST_IP, * PBLACKLIST_IP;
 
-//typedef std::vector<BLACKLIST_STRUCT> BLACKLIST, *PBLACKLIST;
+//WINDIVERT_ADDRESS addr_source, addr_dest;
 
 
-//Blacklist prototypes
-//PBLACKLIST BlacklistInit(void);
-//void BlackListAdd(const PBLACKLIST blacklist, const PURL entry);
+//how the blacklist will be stored (currently unneeded)
+void BlacklistSort(PBLACKLIST);
+
+static BOOL BlackListPayloadMatch(PBLACKLIST blacklist, char* data, UINT16 len);
+
